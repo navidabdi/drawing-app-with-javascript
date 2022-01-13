@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 #canvas {
-  border: 5px solid rgb(115, 28, 255);
+  box-shadow: inset -3px 2px 9px 6px rgba(0, 0, 0, 0.329);
 }
 body {
   overflow: hidden;
 }
 .controlers {
-  height: 5vh;
+  height: 70px;
   padding: 2rem;
   display: flex;
   align-items: center;

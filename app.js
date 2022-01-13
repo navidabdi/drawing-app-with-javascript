@@ -3,11 +3,11 @@ window.addEventListener("load", () => {
     const ctx = canvas.getContext("2d");
 
     //   Resizing
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight - 70;
     canvas.width = window.innerWidth;
     // Variables
     let painting = false;
-    let penColor = '#000';
+    let penColor = "#000";
     let penThikness = 10;
     // Functions
     function startPosition(e) {
@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
         ctx.lineWidth = penThikness;
         ctx.lineCap = "round";
 
-        ctx.lineTo(e.clientX, e.clientY)
+        ctx.lineTo(e.clientX, e.clientY);
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(e.clientX, e.clientY);
@@ -47,5 +47,12 @@ window.addEventListener("load", () => {
     function changePenThikness(e) {
         penThikness = e.target.value;
         // console.log(e.target.value);
+    }
+    // Download The SVG Of The Canvas
+    downloadBtn = document.querySelector(".button-input");
+    downloadBtn.addEventListener("click", downloadSVG);
+    function downloadSVG() {
+        const dataURI = canvas.toDataURL();
+        console.log(dataURI);
     }
 });
