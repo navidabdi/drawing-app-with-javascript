@@ -68,8 +68,8 @@ window.addEventListener("load", () => {
         ctx.fillStyle = "#fff";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        let restoreArray = [];
-        let index = -1;
+        restoreArray = [];
+        index = -1;
 
     }
     // Undo Last
@@ -78,7 +78,9 @@ window.addEventListener("load", () => {
     function undoCanvas() {
         if (index <= 0) {
             clearCanvas();
-        } else {
+
+        }
+        else {
             index -= 1;
             restoreArray.pop();
             ctx.putImageData(restoreArray[index], 0, 0)
