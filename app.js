@@ -55,4 +55,13 @@ window.addEventListener("load", () => {
         const dataURI = canvas.toDataURL();
         console.log(dataURI);
     }
+    // Clear The Canvas
+    clearBtn = document.querySelector(".clear");
+    clearBtn.addEventListener("click", clearCanvas);
+    function clearCanvas() {
+        ctx.fillStyle = "#fff";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    }
 });

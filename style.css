@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 #canvas {
-  box-shadow: inset -3px 2px 9px 6px rgba(0, 0, 0, 0.329);
+  /* box-shadow: inset -3px 2px 9px 6px rgba(0, 0, 0, 0.329); */
 }
 body {
   overflow: hidden;
@@ -15,4 +15,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border-top: 3px solid gray;
 }
