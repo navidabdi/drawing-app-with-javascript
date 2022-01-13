@@ -9,14 +9,20 @@ window.addEventListener("load", () => {
     let painting = false;
     let penColor = "#000";
     let penThikness = 10;
+    let restoreArray = [];
+    let index = -1;
     // Functions
     function startPosition(e) {
         painting = true;
         draw(e);
     }
-    function finishPosition() {
+    function finishPosition(e) {
         painting = false;
         ctx.beginPath();
+        if (e.type != 'mouseout') {
+            restoreArray.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            index += 1;
+        }
     }
     function draw(e) {
         if (!painting) return;
@@ -62,6 +68,20 @@ window.addEventListener("load", () => {
         ctx.fillStyle = "#fff";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        let restoreArray = [];
+        let index = -1;
 
+    }
+    // Undo Last
+    undoBtn = document.querySelector(".undo");
+    undoBtn.addEventListener("click", undoCanvas);
+    function undoCanvas() {
+        if (index <= 0) {
+            clearCanvas();
+        } else {
+            index -= 1;
+            restoreArray.pop();
+            ctx.putImageData(restoreArray[index], 0, 0)
+        }
     }
 });
