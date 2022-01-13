@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#canvas {
+  border: 5px solid rgb(115, 28, 255);
+}
+body {
+  overflow: hidden;
+}
+.controlers {
+  height: 5vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
